@@ -13,7 +13,7 @@ public class Data {
 		
 		SimpleDateFormat formatador = new SimpleDateFormat("dd-MM-yyyy");
 
-		System.out.println("Escreva uma data separado com '-' : ");
+		System.out.println("Escreva sua data de aniversario separados com '-' : ");
 		
 		try {
 			data = formatador.parse(sc.nextLine());
