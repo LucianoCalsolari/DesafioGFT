@@ -1,6 +1,7 @@
 package desafio3;
 
-import java.util.Calendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -8,17 +9,20 @@ public class Data {
 
 	public static void main(String[] args) {
 		Date data;
-		
-		data = new Date();
-		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Escreva uma data : ");
+		SimpleDateFormat formatador = new SimpleDateFormat("dd-MM-yyyy");
+
+		System.out.println("Escreva uma data separado com '-' : ");
 		
-		sc.next();
-		data  = sc.hasNextLong();
-		System.out.println("Data Escolhida : " + data);
-		
+		try {
+			data = formatador.parse(sc.nextLine());
+			System.out.println("Data valida ");
+		} catch (ParseException e) {
+			
+			System.out.println("Isso não é uma data correta"); ;
+		}	
+
 		sc.close();
 	}
 
